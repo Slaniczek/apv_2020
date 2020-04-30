@@ -1,0 +1,78 @@
+@import "variables";
+
+.article {
+  padding: 20px 0;
+  &__title {
+    position: relative;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding: 7px 0;
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      bottom: 0;
+      left: -15px;
+      right: -15px;
+      height: 1px;
+      background-color: $primary-color;
+    }
+  }
+
+  &--list {
+    .article{
+      &__title {
+        margin-bottom: 0;
+        &:before {
+          content: none;
+        }
+      }
+
+      &__text {
+        margin-top: 8px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__info {
+    font-size: 12px;
+    font-weight: 300;
+  }
+
+  &__author, &__date, &__category {
+    margin-right: 15px;
+
+    &:before {
+      font-family: "FontAwesome";
+      margin-right: 4px;
+      color: $gray;
+    }
+  }
+
+  &__author {
+    &:before {
+      content:"\f007";
+    }
+  }
+
+  &__date {
+    &:before {
+      content:"\f073";
+    }
+  }
+
+  &__category {
+    &:before {
+      content:"\f007";
+    }
+  }
+
+  &__text {
+    line-height: 1.4;
+    margin-top: 14px;
+    margin-bottom: 14px;
+  }
+}

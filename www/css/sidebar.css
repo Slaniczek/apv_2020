@@ -1,0 +1,39 @@
+.sidebar {
+  display: block; }
+  .sidebar__nav {
+    position: relative;
+    display: block; }
+    .sidebar__nav:before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      bottom: 0;
+      right: 2px;
+      width: 1px;
+      background-color: #2182ff; }
+  .sidebar__link {
+    position: relative;
+    display: block;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #0f1b12;
+    text-decoration: none;
+    transition: color .2s; }
+    .sidebar__link:before {
+      content: '';
+      position: absolute;
+      display: block;
+      right: 0;
+      top: 1px;
+      bottom: 1px;
+      width: 5px;
+      background-color: #0046a0;
+      opacity: 0;
+      transition: opacity .2s; }
+    .sidebar__link--active {
+      font-weight: bold; }
+    .sidebar__link:hover, .sidebar__link--active {
+      color: #0046a0; }
+      .sidebar__link:hover:before, .sidebar__link--active:before {
+        opacity: 1; }

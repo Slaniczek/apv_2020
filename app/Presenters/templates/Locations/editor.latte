@@ -1,0 +1,9 @@
+{block content}
+
+{if isset($location)}
+    <a href="{plink Locations:detail $location->id}" class="btn btn--primary">Back</a>
+{else}
+    <a href="{plink Locations:}" class="btn btn--primary">Back</a>
+{/if}
+<div class="mb30"></div>
+{control editLocationForm}

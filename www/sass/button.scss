@@ -1,0 +1,16 @@
+@import "variables";
+
+.btn, input[type="submit"] {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  text-decoration: none;
+  background-color: $white;
+  transition: background-color .2s, color .2s;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $white;
+  }
+}

@@ -1,0 +1,6 @@
+app/config/local.neon
+log/
+temp/
+vendor/
+www/node_modules
+.idea/

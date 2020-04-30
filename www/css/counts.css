@@ -1,0 +1,12 @@
+.counts {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center; }
+  .counts__count {
+    display: block;
+    font-size: 25px;
+    font-weight: 300;
+    margin-bottom: 5px; }

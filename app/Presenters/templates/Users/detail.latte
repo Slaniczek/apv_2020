@@ -1,0 +1,19 @@
+{block content}
+
+<a href="{plink Users:}" class="btn btn--primary">Back</a>
+<div class="mb30"></div>
+
+<h1>
+    {$usr->lastName}, {$usr->firstName}
+</h1>
+<dl>
+    <dt>Name</dt>
+    <dd>{$usr->lastName}, {$usr->firstName}</dd>
+    <dt>Birth date</dt>
+    <dd>{$usr->birthDay |date:'%d.%m.%Y'}</dd>
+    <dt>Gender</dt>
+    <dd>{$usr->gender}</dd>
+    <dt>Height</dt>
+    <dd>{$usr->height} cm</dd>
+</dl>
+<a href="{plink Users:editor $usr->id}" class="btn btn--primary btn--small">Edit</a>

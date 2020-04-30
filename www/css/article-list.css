@@ -1,0 +1,6 @@
+.article-list {
+  display: grid;
+  column-gap: 30px;
+  margin-bottom: 60px; }
+  .article-list--3 {
+    grid-template-columns: repeat(3, 1fr); }

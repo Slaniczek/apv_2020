@@ -1,0 +1,12 @@
+@import "variables";
+
+.article-list {
+  display: grid;
+  column-gap: 30px;
+  margin-bottom: $box-margin-bottom;
+
+  &--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}

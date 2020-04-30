@@ -1,0 +1,44 @@
+
+{block content}
+
+<h1>Persons</h1>
+<table>
+    <thead>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Birth date
+        </th>
+        <th>
+            Gender
+        </th>
+        <th>
+            Height
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {foreach $users as $usr}
+        <tr>
+            <td>
+                <a href="{plink Users:detail $usr->id}">
+                    {$usr->lastName}, {$usr->firstName}
+                </a>
+            </td>
+            <td>
+                    {$usr->birthDay |date:'%d.%m.%Y'}
+            </td>
+            <td>
+                {$usr->gender}
+            </td>
+            <td>
+                {$usr->height} cm
+            </td>
+        </tr>
+    {/foreach}
+    </tbody>
+</table>
+
+<a href="{plink Users:editor}" class="btn btn--primary btn--small">New</a>

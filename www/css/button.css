@@ -1,0 +1,11 @@
+.btn, input[type="submit"] {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #0046a0;
+  color: #0046a0;
+  text-decoration: none;
+  background-color: #ffffff;
+  transition: background-color .2s, color .2s; }
+  .btn:hover, input[type="submit"]:hover {
+    background-color: #0046a0;
+    color: #ffffff; }

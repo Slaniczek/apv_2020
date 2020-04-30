@@ -1,0 +1,53 @@
+@import "variables";
+@import "base";
+
+.header {
+
+  &__logo {
+    display: flex;
+    position: relative;
+    left: -1px;
+    align-items: center;
+    justify-content: center;
+    height: $header-height;
+    width: 200px;
+    font-weight: bold;
+    line-height: $header-height;
+    text-align: center;
+    vertical-align: middle;
+    background-color: $primary-color;
+    color: $white;
+    border-right: 1px solid $primary-color;
+
+    svg {
+      height: $header-height;
+      width: auto;
+    }
+  }
+
+
+  &__link {
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    height: $header-height - 2px;
+    line-height: $header-height - 2px;
+    vertical-align: middle;
+    text-decoration: none;
+    color: $black;
+    background-color: $white;
+    transition: color .2s, background-color .2s;
+    font-weight: 500;
+    border-bottom: 1px solid $primary-color;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover, &--active {
+      background-color: $primary-color;
+      color: $white
+    }
+  }
+
+}

@@ -1,0 +1,23 @@
+@import "variables";
+input[type="text"], input[type="number"], input[type="date"] {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid $primary-color;
+  padding: 10px;
+  min-width: 250px;
+}
+
+select {
+  border: 1px solid $primary-color;
+  padding: 10px;
+  min-width: 250px;
+  background-color: $white;
+}
+
+form table tr {
+  display: grid;
+  grid-template-columns: 200px auto;
+  margin-bottom: 15px;
+  border-color: transparent !important;
+}

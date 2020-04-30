@@ -1,0 +1,93 @@
+@import "variables";
+
+.slider {
+  margin-bottom: $box-margin-bottom;
+  margin-left: -30px;
+  margin-right: -30px;
+  position: relative;
+
+  &__prev, &__next {
+    position: absolute;
+    top: calc(50% - 20px);
+    line-height: 20px;
+    color: $white;
+    text-decoration: none;
+    font-size: 20px;
+    z-index: 2;
+
+    &:before {
+      font-family: "FontAwesome";
+    }
+  }
+
+  &__next {
+    right: 30px;
+
+    &:before {
+      content:"\f054";
+    }
+  }
+
+  &__prev {
+    left: 30px;
+
+    &:before {
+      content:"\f053";
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    height: 400px;
+    padding: 30px;
+    justify-content: flex-end;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 180px;
+      background-image: linear-gradient(rgba(0,0,0, 0), rgba(0,0,0, 0.5));
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+      border: 1px solid $white;
+      z-index: 1;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    z-index: 1;
+    font-size: 40px;
+    font-weight: 300;
+    color: $white;
+  }
+
+  &__text {
+    margin: 0;
+    z-index: 1;
+    color: $white;
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    min-width: 100%;
+  }
+}

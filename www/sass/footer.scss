@@ -1,0 +1,15 @@
+@import "variables";
+@import "base";
+
+.footer {
+  margin-bottom: 30px;
+  &__container {
+    @extend .container;
+    text-align: center;
+    height: $footer-height;
+    line-height: $footer-height;
+    vertical-align: middle;
+    font-size: 12px;
+    border: 1px solid $primary-color;
+  }
+}

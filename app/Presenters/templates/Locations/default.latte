@@ -1,0 +1,67 @@
+
+{block content}
+
+<h1>Locations</h1>
+<table>
+    <thead>
+    <tr>
+        <th>
+            City
+        </th>
+        <th>
+            Street name
+        </th>
+        <th>
+            Street number
+        </th>
+        <th>
+            Zip code
+        </th>
+        <th>
+            Country
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Latitude
+        </th>
+        <th>
+            Longtitude
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {foreach $locations as $location}
+        <tr>
+            <td>
+                <a href="{plink Locations:detail $location->id}">
+                    {$location->city}
+                </a>
+            </td>
+            <td>
+                {$location->streetName}
+            </td>
+            <td>
+                {$location->streetNumber}
+            </td>
+            <td>
+                {$location->zip}
+            </td>
+            <td>
+                {$location->country}
+            </td>
+            <td>
+                {$location->name}
+            </td>
+            <td>
+                {$location->latitude}
+            </td>
+            <td>
+                {$location->longitude}
+            </td>
+        </tr>
+    {/foreach}
+    </tbody>
+</table>
+<a href="{plink Locations:editor}" class="btn btn--primary btn--small">New</a>

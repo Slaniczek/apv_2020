@@ -1,0 +1,43 @@
+{block content}
+
+<a href="{plink Users:}" class="btn btn--primary">Back</a>
+<div class="mb30"></div>
+
+<h1>
+    {$location->streetName}, {$location->city}
+</h1>
+<dl>
+    <dt>City</dt>
+    <dd>
+        {$location->city}
+    </dd>
+    <dt>Street name</dt>
+    <dd>
+        {$location->streetName}
+    </dd>
+    <dt>Street number</dt>
+    <dd>
+        {$location->streetNumber}
+    </dd>
+    <dt>Zip code</dt>
+    <dd>
+        {$location->zip}
+    </dd>
+    <dt>Country</dt>
+    <dd>
+        {$location->country}
+    </dd>
+    <dt>Name</dt>
+    <dd>
+        {$location->name}
+    </dd>
+    <dt>Latitude</dt>
+    <dd>
+        {$location->latitude}
+    </dd>
+    <dt>Longtitude</dt>
+    <dd>
+        {$location->longitude}
+    </dd>
+</dl>
+<a href="{plink Locations:editor $location->id}" class="btn btn--primary btn--small">Edit</a>
