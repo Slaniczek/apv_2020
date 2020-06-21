@@ -6,6 +6,9 @@
     <thead>
     <tr>
         <th>
+            Name
+        </th>
+        <th>
             City
         </th>
         <th>
@@ -21,9 +24,6 @@
             Country
         </th>
         <th>
-            Name
-        </th>
-        <th>
             Latitude
         </th>
         <th>
@@ -34,10 +34,14 @@
     <tbody>
     {foreach $locations as $location}
         <tr>
+
             <td>
                 <a href="{plink Locations:detail $location->id}">
-                    {$location->city}
+                    {$location->name}
                 </a>
+            </td>
+            <td>
+                {$location->city}
             </td>
             <td>
                 {$location->streetName}
@@ -50,9 +54,6 @@
             </td>
             <td>
                 {$location->country}
-            </td>
-            <td>
-                {$location->name}
             </td>
             <td>
                 {$location->latitude}

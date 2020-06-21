@@ -1,0 +1,25 @@
+
+{block content}
+
+<h1>Contacts</h1>
+<table>
+    <thead>
+    <tr>
+        <th>
+            Name
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {foreach $relationTypes as $relationType}
+        <tr>
+            <td>
+                <a href="{plink RelationTypes:editor $relationType->id}">
+                    {$relationType->name}
+                </a>
+            </td>
+        </tr>
+    {/foreach}
+    </tbody>
+</table>
+<a href="{plink RelationTypes:editor}" class="btn btn--primary btn--small">New</a>

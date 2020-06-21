@@ -16,3 +16,6 @@ services:
 	- App\Core\UsersModel
 	- App\Core\CountsModel
 	- App\Core\LocationsModel
+	- App\Core\ContactModel
+	- App\Core\RelationsModel
+	- App\Core\MeetingModel

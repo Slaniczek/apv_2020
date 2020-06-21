@@ -80,6 +80,20 @@ ul {
       top: 11px;
     }
   }
+
+  &.error {
+    padding: 15px;
+    background-color: lighten($danger, 50);
+
+    li {
+      font-weight: bold;
+      color: $danger;
+
+      &:before {
+        background-color: $danger;
+      }
+    }
+  }
 }
 
 dl {

@@ -1,0 +1,49 @@
+
+{block content}
+
+<h1>Meetings</h1>
+<table>
+    <thead>
+    <tr>
+        <th>
+            Start
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Duration
+        </th>
+        <th>
+            Location
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+        {foreach $meetings as $meeting}
+            <tr>
+                <td>
+                    {$meeting->start}
+                </td>
+                <td>
+                    <a href="{plink Meetings:editor $meeting->id}">
+                        {$meeting->description}
+                    </a>
+                </td>
+                <td>
+                    {$meeting->duration|date: '%H:%I'}
+                </td>
+                <td>
+                    {$locations[$meeting->idLocation]->name}
+                </td>
+                <td>
+                    <a href="{plink delete! $meeting->id}" class="delete">
+                        Smazat
+                    </a>
+                </td>
+            </tr>
+        {/foreach}
+    </tbody>
+</table>
+
+<a href="{plink Meetings:editor}" class="btn btn--primary btn--small">New</a>

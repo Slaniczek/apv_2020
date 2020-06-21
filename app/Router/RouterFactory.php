@@ -18,6 +18,8 @@ final class RouterFactory
 		$router->addRoute('<presenter>/<action>', 'Homepage:default');
         $router->addRoute('/users/detail/id', 'Users:detail');
         $router->addRoute('/locations/detail/id', 'Locations:detail');
+        $router->addRoute('/contacts/detail/id', 'Contacts:detail');
+        $router->addRoute('/contactTypes/detail/id', 'ContactTypes:detail');
 		return $router;
 	}
 }

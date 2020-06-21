@@ -3,10 +3,18 @@
 <a href="{plink Users:}" class="btn btn--primary">Back</a>
 <div class="mb30"></div>
 
+{dump $contacts}
+
 <h1>
-    {$usr->lastName}, {$usr->firstName}
+    {$usr->lastName} {$usr->firstName}
 </h1>
 <dl>
+    <dt>
+        Nickname
+    </dt>
+    <dd>
+        {$usr->nickname}
+    </dd>
     <dt>Name</dt>
     <dd>{$usr->lastName}, {$usr->firstName}</dd>
     <dt>Birth date</dt>
@@ -16,4 +24,84 @@
     <dt>Height</dt>
     <dd>{$usr->height} cm</dd>
 </dl>
+
+{if count($meetings)}
+    <h2>Meetings</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>
+                Start
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Duration
+            </th>
+            <th>
+                Location
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        {foreach $meetings as $meeting}
+            <tr>
+                <td>
+                    {$meeting->start}
+                </td>
+                <td>
+                    <a href="{plink Meetings:editor $meeting->id}">
+                        {$meeting->description}
+                    </a>
+                </td>
+                <td>
+                    {$meeting->duration|date: '%H:%I'}
+                </td>
+                <td>
+                    {$locations[$meeting->idLocation]->name}
+                </td>
+            </tr>
+        {/foreach}
+        </tbody>
+    </table>
+{/if}
+
+{if count($contacts)}
+    <h2>
+        Contacts
+    </h2>
+    <table>
+        <thead>
+        <tr>
+            <th>
+                Type
+            </th>
+            <th>
+                Value
+            </th>
+        </tr>
+        </thead>
+        {foreach $contacts as $contact}
+            <tr>
+                <td>
+                    {$contact->contactType->name}
+                </td>
+                <td>
+                    {if $contact->contactType->name == 'email'}
+                        <a href="mailto:{$contact->contact}">
+                            {$contact->contact}
+                        </a>
+                    {elseif $contact->contactType->name == 'phone'}
+                        <a href="tel:{$contact->contact}">
+                            {$contact->contact}
+                        </a>
+                    {else}
+                        {$contact->contact}
+                    {/if}
+                </td>
+            </tr>
+        {/foreach}
+    </table>
+{/if}
 <a href="{plink Users:editor $usr->id}" class="btn btn--primary btn--small">Edit</a>

@@ -29,6 +29,31 @@ body {
   box-sizing: border-box;
 }
 
+fieldset {
+  padding: 0;
+  border: 0;
+
+  table {
+    margin-bottom: 10px;
+    border-bottom: 1px solid $primary-color;
+  }
+
+  legend {
+    display: none;
+  }
+
+  tr {
+    width: 50%;
+    display: block;
+    float: left;
+  }
+
+  input[name^="smazat_"] {
+    border: 1px solid $danger;
+    color: $danger;
+  }
+}
+
 table {
   margin-bottom: $box-margin-bottom;
   width: 100%;
@@ -76,7 +101,7 @@ table {
   
   &__content {
     overflow-y: auto;
-    padding: 50px 0;
+    padding: 50px 30px 50px 0;
   }
 }
 

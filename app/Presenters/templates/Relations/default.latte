@@ -1,0 +1,46 @@
+
+{block content}
+
+<h1>Relations</h1>
+<table>
+    <thead>
+    <tr>
+        <th>
+            Person 1
+        </th>
+        <th>
+            Person 2
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Type
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {foreach $relations as $relation}
+        <tr>
+            <td>
+                <a href="{plink Relations:editor $relation->id}">
+                    {$usernames[$relation->userIds[0]]}
+                </a>
+            </td>
+            <td>
+                <a href="{plink Relations:editor $relation->id}">
+                    {$usernames[$relation->userIds[1]]}
+                </a>
+            </td>
+            <td>
+                {$relation->description}
+            </td>
+            <td>
+                {$relation->relationType->name}
+            </td>
+        </tr>
+    {/foreach}
+    </tbody>
+</table>
+
+<a href="{plink Relations:editor}" class="btn btn--primary btn--small">New</a>

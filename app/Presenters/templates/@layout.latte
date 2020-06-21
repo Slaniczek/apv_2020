@@ -3,7 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>{ifset title}{include title|stripHtml} | {/ifset}Nette Web</title>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="{$basePath}/css/index.css">
+	<script type="text/javascript" src="{$basePath}/js/nette.ajax.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap&subset=latin-ext" rel="stylesheet">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
@@ -20,7 +22,8 @@
 	</div>
 
 	{block scripts}
-	<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
+	<script type="text/javascript"  src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
+	<script type="text/javascript" src="{$basePath}/js/main.js"></script>
 	{/block}
 </body>
 </html>

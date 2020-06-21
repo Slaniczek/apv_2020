@@ -60,6 +60,14 @@ ul {
       background-color: #0046a0;
       left: 0;
       top: 11px; }
+  ul.error {
+    padding: 15px;
+    background-color: #ffc7c7; }
+    ul.error li {
+      font-weight: bold;
+      color: #c60101; }
+      ul.error li:before {
+        background-color: #c60101; }
 
 dl {
   display: grid;

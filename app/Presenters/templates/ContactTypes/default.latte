@@ -1,0 +1,31 @@
+
+{block content}
+
+<h1>Contacts</h1>
+<table>
+    <thead>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            RegExp
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {foreach $contactTypes as $contactType}
+        <tr>
+            <td>
+                <a href="{plink ContactTypes:editor $contactType->id}">
+                    {$contactType->name}
+                </a>
+            </td>
+            <td>
+                {$contactType->validationRegExp}
+            </td>
+        </tr>
+    {/foreach}
+    </tbody>
+</table>
+<a href="{plink ContactTypes:editor}" class="btn btn--primary btn--small">New</a>

@@ -1,6 +1,6 @@
 @import "variables";
 
-.btn, input[type="submit"] {
+.btn, input[type="submit"], input[name^="smazat_"] {
   display: inline-block;
   padding: 10px 20px;
   border: 1px solid $primary-color;

@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace App\Presenters;
 
 use App\Core\LocationsModel;
+use App\Core\UsersModel;
 use BasePresenter;
 use Nette;
 
 final class LocationsPresenter extends BasePresenter
 {
+
     /** @var Users @inject */
     private $locations;
 
@@ -24,7 +26,7 @@ final class LocationsPresenter extends BasePresenter
 
         $id = $this->getParameter('id');
         if($id !== null) {
-            $this->template->location = $this->locations->getLocation((int) $id);
+            $this->template->location = $this->locations->getLocationById((int) $id);
         } else {
             $this->template->locations = $this->locations->getLocations();
         }
@@ -42,7 +44,7 @@ final class LocationsPresenter extends BasePresenter
             $form->addText('longitude', 'Longitude')->setRequired('Vyplňte prosím pole');
             $id = $this->getParameter('id');
             if ($id !== null) {
-                $location = $this->locations->getLocation($id);
+                $location = $this->locations->getLocationById($id);
                 $form['city']->setDefaultValue($location->city);
                 $form['street_name']->setDefaultValue($location->streetName);
                 $form['street_number']->setDefaultValue($location->streetNumber);
@@ -67,7 +69,7 @@ final class LocationsPresenter extends BasePresenter
             $this->locations->addLocation(new \Location((array) $values));
         }
         $this->flashMessage('Formulář byl úspěšně odeslán');
-        $this->redirect('Locations:detail', $id);
+        $this->redirect('Locations:default');
     }
 
     function actionEditor($id): void {}

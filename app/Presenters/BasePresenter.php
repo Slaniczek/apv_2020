@@ -9,4 +9,5 @@ abstract class BasePresenter extends Presenter
         $control = new \HeaderControl();
         return $control;
     }
+
 }
