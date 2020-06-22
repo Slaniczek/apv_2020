@@ -36,6 +36,11 @@
             <td>
                 {$usr->height} cm
             </td>
+            <td>
+                <a href="{plink delete! $usr->id}" class="delete">
+                    Smazat
+                </a>
+            </td>
         </tr>
     {/foreach}
     </tbody>

@@ -30,6 +30,11 @@
             <td>
                 {$contact->nickname}
             </td>
+            <td>
+                <a href="{plink delete! $contact->id}" class="delete">
+                    Smazat
+                </a>
+            </td>
         </tr>
     {/foreach}
     </tbody>

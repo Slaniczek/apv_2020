@@ -22,6 +22,7 @@ class LocationsModel extends DbModel {
 
     public function getLocationsByIds(array $id, $limit = 25): array {
         $arr = [];
+        if (count($id) == 0) return [];
         $source = $this->db->query('SELECT * FROM location WHERE id_location IN (?) LIMIT ?', array_unique($id), $limit)->fetchAll();
         foreach ($source as $item) {
             $arr[$item['id_location']] = new \Location((array) $item, $item['id_location']);

@@ -61,10 +61,10 @@ final class MeetingsPresenter extends BasePresenter
 
 
         if ($id !== null) {
-            $form->addMultiSelect('persons', 'Persons', array_reduce($persons, function ($users, $person){
+            $form->addCheckboxList('persons', 'Persons', array_reduce($persons, function ($users, $person){
                 $users[$person->id] = $person->nickname;
                 return $users;
-            }), count($persons));
+            }));
             $meeting = $this->meetings->getMeetingById($id);
             $form['persons']->setDefaultValue(array_map(function ($item){return $item->id_person;}, $this->meetings->getPeopleOnMeeting($meeting->id)));
             $form['duration']->setDefaultValue($meeting->duration->format('%H:%I'));
@@ -93,10 +93,19 @@ final class MeetingsPresenter extends BasePresenter
 
     function actionEditor($id): void {
         if (isset($id)){
-            $id = $this->getParameter('id');
             $this->template->meeting = $this->meetings->getMeetingById((int) $id);
         }
     }
+
+    function actionDetail($id){
+        if (isset($id)){
+            $meeting = $this->meetings->getMeetingById((int) $id);
+            $this->template->meeting = $meeting;
+            $this->template->persons = $this->users->getUserNames(array_map(function ($item){return $item['id_person'];} ,(array) $this->meetings->getPeopleOnMeeting($meeting->id)));
+            $this->template->location = $this->locations->getLocationById($meeting->idLocation);
+        }
+    }
+
     function handleDelete($id): void {
         $this->meetings->removeMeeting($id);
     }

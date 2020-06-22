@@ -100,10 +100,15 @@ final class UsersPresenter extends BasePresenter
         $this->template->locations = $locations;
     }
 
-    function actionEditor($id): void {
-        $this->loadUser($id);
+    function actionEditor($id = null): void {
+        if(isset($id)) {
+            $this->loadUser($id);
+        }
     }
     function actionDetail($id): void {
         $this->loadUser($id);
+    }
+    function handleDelete($id){
+        $this->users->deleteUserById($id);
     }
 }

@@ -1,0 +1,25 @@
+{block content}
+
+<a href="{plink Meetings:}" class="btn btn--primary">Back</a>
+<div class="mb30"></div>
+
+<h1>
+    Meeting
+</h1>
+<p>
+    {$meeting->description}
+</p>
+<dl>
+    <dt>Duration</dt>
+    <dd>{$meeting->duration |date:'%H.%I'}</dd>
+    <dt>Location</dt>
+    <dd>
+        <a href="{plink Locations:detail $location->id}">
+            {$location->name}
+        </a>
+    </dd>
+    <dt>Persons</dt>
+    <dd>{foreach $persons as $person}{$person}{sep}, {/sep}{/foreach}</dd>
+</dl>
+
+<a href="{plink Meetings:editor $meeting->id}" class="btn btn--primary btn--small">Edit</a>

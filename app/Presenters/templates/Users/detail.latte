@@ -3,8 +3,6 @@
 <a href="{plink Users:}" class="btn btn--primary">Back</a>
 <div class="mb30"></div>
 
-{dump $contacts}
-
 <h1>
     {$usr->lastName} {$usr->firstName}
 </h1>
@@ -51,7 +49,7 @@
                     {$meeting->start}
                 </td>
                 <td>
-                    <a href="{plink Meetings:editor $meeting->id}">
+                    <a href="{plink Meetings:detail $meeting->id}">
                         {$meeting->description}
                     </a>
                 </td>

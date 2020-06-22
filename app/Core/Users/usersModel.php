@@ -19,11 +19,16 @@ class UsersModel extends DbModel {
    public function getUserNames(array $userIds): array {
        array_walk_recursive($userIds, function($a) use (&$ids) { $ids[] = $a; });
        if (!isset($ids) or count($ids) == 0) return [];
+       $ids = (array) $ids;
        $source = $this->db->query('SELECT id_person, nickname FROM person WHERE id_person IN ('.implode(",", $ids).')')->fetchAll();
        return array_reduce((array) $source, function ($arr, $item) {
            $arr[$item['id_person']] = $item['nickname'];
            return $arr;
        });
+   }
+
+   public function deleteUserById($id){
+       $this->db->query(' DELETE FROM relation WHERE id_person1 = ? OR id_person2 = ?; DELETE FROM person_meeting WHERE id_person = ?; DELETE FROM contact WHERE id_person = ?; DELETE FROM person WHERE id_person = ?;', $id, $id, $id, $id, $id);
    }
 
    public function getUser($id): \Person {

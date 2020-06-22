@@ -3,13 +3,13 @@
     <div class="header__container">
         <nav class="header__nav">
             <a href="{plink Homepage:}" class="header__link {if $presenter->isLinkCurrent('Homepage:')}header__link--active{/if}">Dashboard</a>
-            <a href="{plink Users:default}" class="header__link {if $presenter->isLinkCurrent('Users:default')}header__link--active{/if}">Persons</a>
-            <a href="{plink Locations:default}" class="header__link {if $presenter->isLinkCurrent('Locations:default')}header__link--active{/if}">Locations</a>
-            <a href="{plink Contacts:default}" class="header__link {if $presenter->isLinkCurrent('Contacts:default')}header__link--active{/if}">Contacts</a>
-            <a href="{plink ContactTypes:default}" class="header__link {if $presenter->isLinkCurrent('ContactTypes:default')}header__link--active{/if}">Contact types</a>
-            <a href="{plink Relations:default}" class="header__link {if $presenter->isLinkCurrent('Relations:default')}header__link--active{/if}">Relations</a>
-            <a href="{plink RelationTypes:default}" class="header__link {if $presenter->isLinkCurrent('RelationTypes:default')}header__link--active{/if}">Relation types</a>
-            <a href="{plink Meetings:default}" class="header__link {if $presenter->isLinkCurrent('Meetings:default')}header__link--active{/if}">Meetings</a>
+            <a href="{plink Users:default}" class="header__link {if $presenter->isLinkCurrent('Users:*')}header__link--active{/if}">Persons</a>
+            <a href="{plink Locations:default}" class="header__link {if $presenter->isLinkCurrent('Locations:*')}header__link--active{/if}">Locations</a>
+            <a href="{plink Contacts:default}" class="header__link {if $presenter->isLinkCurrent('Contacts:*')}header__link--active{/if}">Contacts</a>
+            <a href="{plink ContactTypes:default}" class="header__link {if $presenter->isLinkCurrent('ContactTypes:*')}header__link--active{/if}">Contact types</a>
+            <a href="{plink Relations:default}" class="header__link {if $presenter->isLinkCurrent('Relations:*')}header__link--active{/if}">Relations</a>
+            <a href="{plink RelationTypes:default}" class="header__link {if $presenter->isLinkCurrent('RelationTypes:*')}header__link--active{/if}">Relation types</a>
+            <a href="{plink Meetings:default}" class="header__link {if $presenter->isLinkCurrent('Meetings:*')}header__link--active{/if}">Meetings</a>
         </nav>
     </div>
 </header>

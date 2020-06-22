@@ -79,7 +79,6 @@ final class RelationsPresenter extends BasePresenter
     public function editRelationFormSuceeded(Nette\Application\UI\Form $form, \stdClass $values) {
         $id = $this->getParameter('id');
         $values = (array) $values;
-        var_dump($values);
         $this->relations->loadRelationTypeById($values['id_relation_type'], $values);
         if($id!== null) {
             $this->relations->editRelation(new \Relation($values, $id));
@@ -87,7 +86,7 @@ final class RelationsPresenter extends BasePresenter
             $this->relations->addRelation(new \Relation($values));
         }
         $this->flashMessage('Formulář byl úspěšně odeslán');
-        $this->redirect('Relations:default');
+        $this->redirect('Relations:');
     }
 
     function actionEditor($id): void {}

@@ -32,6 +32,10 @@ class ContactModel extends DbModel {
         return new \ContactType((array)$source, $id);
     }
 
+    public function deleteContactById($id) {
+        $this->db->query('DELETE FROM contact WHERE id_contact = ?', $id);
+    }
+
     public function getContactById($id): \Contact {
         $source = $this->db->query('SELECT id_contact, id_person, contact.id_contact_type ,name, contact, validation_regexp FROM contact LEFT JOIN contact_type ON contact.id_contact_type = contact_type.id_contact_type WHERE id_contact = ?', $id)->fetch();
         if($source !== null) {

@@ -30,7 +30,7 @@ class MeetingModel extends DbModel {
 
     public function getMeetingsByPersonId($id, $limit = 10): array {
         $arr = [];
-        $source = $this->db->query('SELECT meeting.id_meeting, start, description, duration, id_location FROM meeting INNER JOIN person_meeting ON person_meeting.id_meeting = meeting.id_meeting WHERE person_meeting.id_person = ? LIMIT ?', $id, $limit)->fetchAll();
+        $source = $this->db->query('SELECT meeting.id_meeting, start, description, duration, id_location FROM meeting INNER JOIN person_meeting ON person_meeting.id_meeting = meeting.id_meeting WHERE person_meeting.id_person = ? ORDER BY start DESC LIMIT ?', $id, $limit)->fetchAll();
         foreach ($source as $item) {
             array_push($arr, new \Meeting((array) $item, $item['id_meeting']));
         }
